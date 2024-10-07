@@ -12,7 +12,7 @@ const CertificateForm = ({ setResult, setError, setLoading }) => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/check-certificate', { domain });
+      const response = await axios.post('https://sslcheckbackend-production.up.railway.app/api/check-certificate', { domain });
       setResult(response.data);
     } catch (err) {
       if (err.response && err.response.data && err.response.data.error) {
